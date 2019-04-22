@@ -1,25 +1,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="400dp"
-    tools:context="fragments.SecondFragment"
-    android:background="@color/colorPrimary"
+    android:layout_height="match_parent"
+    tools:context="fragments.ThirdFragment"
     android:orientation="vertical"
     android:gravity="center">
 
     <!-- TODO: Update blank fragment layout -->
     <EditText
-        android:id="@+id/fstNumber"
+        android:id="@+id/etnum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="first number"
-        android:layout_gravity="center"
-        android:gravity="center"/>
-    <EditText
-        android:id="@+id/secNumber"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="second number"
+        android:hint="Enter a number"
         android:layout_gravity="center"
         android:gravity="center"/>
 
@@ -27,6 +19,7 @@
         android:id="@+id/btnCalculate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Calculate"/>
-
+        android:text="Calculate"
+        android:layout_gravity="center"
+        android:gravity="center"/>
 </LinearLayout>

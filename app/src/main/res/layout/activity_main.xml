@@ -4,22 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/btnLoad"
+        android:id="@+id/btnFrag"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Load ADD"/>
-    <LinearLayout
-        android:id="@+id/FragContainer"
+        android:layout_margin="20dp"
+        android:text="Load first fragment" />
+
+    <RelativeLayout
+        android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:orientation="vertical"
-        >
-
-    </LinearLayout>
-
+        android:layout_height="400dp" />
 
 </LinearLayout>

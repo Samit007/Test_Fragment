@@ -1,4 +1,4 @@
-package com.e.test_fragment;
+package com.example.fragments;
 
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -7,39 +7,47 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import fragment.AddFragment;
-import fragment.SecondFragment;
+import com.e.test_fragment.R;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-    private Button btnLoad;
-    private Boolean status=true;
+import fragments.FirstFragment;
+import fragments.SecondFragment;
+import fragments.ThirdFragment;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    private Button btnFrag;
+    private Integer status=0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btnLoad=findViewById(R.id.btnLoad);
-        btnLoad.setOnClickListener(this);
+        btnFrag=findViewById(R.id.btnFrag);
+        btnFrag.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        FragmentManager fragmentManager=getSupportFragmentManager();
+        FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction= fragmentManager.beginTransaction();
 
-
-        if(status){
-            AddFragment addFragment=new AddFragment();
-            fragmentTransaction.replace(R.id.FragContainer,addFragment);
+        if (status == 0){
+            FirstFragment firstFragment=new FirstFragment();
+            fragmentTransaction.replace(R.id.fragmentContainer,firstFragment);
             fragmentTransaction.commit();
-            btnLoad.setText("Calculate SUM");
-            status=false;
-        }
-        else {
-            SecondFragment secondFragment=new SecondFragment();
-            fragmentTransaction.replace(R.id.FragContainer,secondFragment);
+            btnFrag.setText("Load Second Fragment");
+            status=1;
+        }else if(status==1) {
+            SecondFragment secondFragment = new SecondFragment();
+            fragmentTransaction.replace(R.id.fragmentContainer, secondFragment);
             fragmentTransaction.commit();
-            btnLoad.setText("Calculate Area");
-            status=true;
+            btnFrag.setText("Load Third Fragment");
+            status = 2;
+        } else {
+            ThirdFragment thirdFragment=new ThirdFragment();
+            fragmentTransaction.replace(R.id.fragmentContainer,thirdFragment);
+            fragmentTransaction.commit();
+            btnFrag.setText("Load First Fragment");
+            status=0;
         }
     }
 }

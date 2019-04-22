@@ -1,4 +1,4 @@
-package fragment;
+package fragments;
 
 
 import android.os.Bundle;
@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.e.test_fragment.R;
 
 /**
@@ -28,8 +27,8 @@ public class SecondFragment extends Fragment implements View.OnClickListener{
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_second, container, false);
 
-        etRadius=view.findViewById(R.id.etRadius);
-        btnArea=view.findViewById(R.id.btnRadius);
+        etRadius=view.findViewById(R.id.etradius);
+        btnArea=view.findViewById(R.id.btnCalculate);
 
         btnArea.setOnClickListener(this);
         return view;
